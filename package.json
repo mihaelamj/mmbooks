@@ -1,0 +1,30 @@
+{
+  "name": "mmbooks",
+  "version": "1.0.0",
+  "description": "REST Web API Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mihaelamj@github.com/mihaelamj/mmbooks.git"
+  },
+  "keywords": [
+    "REST",
+    "node"
+  ],
+  "author": "mmj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mihaelamj/mmbooks/issues"
+  },
+  "homepage": "https://github.com/mihaelamj/mmbooks#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "mongoose": "^4.4.3"
+  }
+}
