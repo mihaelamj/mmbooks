@@ -3,6 +3,10 @@ node.js REST Test
 
 ## Intro
 
+This is a playgorund for a Plurasight course:
+#####RESTful Web Services with Node.js and Express
+by Johnatan Mills
+
 ###REST Verbs
 * GET - requests data (a list of objects or a specific object)
 * POST - adds data
