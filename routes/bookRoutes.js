@@ -1,38 +1,16 @@
 var express = require('express');
 
 var routes = function(Book) {
-    
+    //make router
     var bookRouter = express.Router();
+    //fetch controller with passing it a Book model
+    var bookController = require('../controllers/bookController')(Book);
 
+//use bookController's functions
     bookRouter.route('/')
-    
-        .post(function(req, res){
-            
-            var book = new Book(req.body);
-            console.log(book);
-            console.log(req.body);
+        .post(bookController.post)
+        .get(bookController.get);
 
-            book.save();
-            //201 - created
-            res.status(201).send(book);
-
-        })
-        
-        .get(function(req,res){
-
-            var query = {};
-
-            if (req.query.genre) {
-                query.genre = req.query.genre;
-            }
-            Book.find(query, function(err, books){
-                if (err) {
-                    res.status(500).send(err);
-                } else {
-                   res.json(books); 
-                }  
-            });
-        });
 
 //insert middleware
     bookRouter.use('/:bookId', function(req, res, next) {

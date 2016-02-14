@@ -55,6 +55,20 @@ Implement:
 3. DELETE
 4. PATCH
 
+##Controllers
+Make controllers for pluggable router implementation.
+
+##Testing with Mocha
+1. Install Mocha for Gulp, and Should and Sinon. (npm install gulp-mocha should sinon --save)
+2. Make test controllers
+3. Run it with Gulp (set it up in gulpfile.js) 
+4. Call test with gulp test
+
+##Integration testing
+1. Install Supertest (npm install supertest --save-dev)
+2. Install gulp-env to manipulate enviroment variables (npm install gulp-env --save-dev)
+
+
 
 
 
