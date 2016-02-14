@@ -34,9 +34,9 @@ That means that in each request will be a set of hyperlinks that you can use to 
 3. Run mongoDB
 
 ##Query
-/api/book?genre=History
-Express return it as:
-req.query = {genre: 'History'}
+* /api/book?genre=History
+	* Express return it as:
+		* req.query = {genre: 'History'}
 
 
 ##Post
@@ -81,9 +81,9 @@ Hypermedia as the Engine of Application State.
 
 Makes API self-documenting.
 
-*Add hyperlinks to our model, in controller;
-*Add links to returned books, first to self, in controller.
-*Add links in routes. 
+* Add hyperlinks to our model, in controller;
+* Add links to returned books, first to self, in controller.
+* Add links in routes. 
 
 
 
