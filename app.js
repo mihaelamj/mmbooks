@@ -2,8 +2,13 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-//connect to mongoDB, and if it does not exist it will create it
-var db = mongoose.connect('mongodb://localhost/bookAPI');
+var db;
+//connect to mongoDB, and if it does not exist it will create it, test or production
+if (process.env.ENV == 'Test'){
+    db = mongoose.connect('mongodb://localhost/bookAPI_test');
+} else{
+    db = mongoose.connect('mongodb://localhost/bookAPI');
+}
 
 //fetch model
 var Book = require('./models/bookModel');
@@ -25,5 +30,8 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log('Gulp is running app.js on port:' + port);
+    console.log('Gulp is running my app.js on port:' + port);
 })
+
+//export app object for supertest to be able to use it
+module.exports = app;

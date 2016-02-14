@@ -40,7 +40,7 @@ req.query = {genre: 'History'}
 
 
 ##Post
-1. Install bodyParser
+* Install bodyParser
 
 Use PostMan and use x-wwww-form-urlencoded, because we use
 app.use(bodyParser.urlencoded({extended:true}));
@@ -59,14 +59,32 @@ Implement:
 Make controllers for pluggable router implementation.
 
 ##Testing with Mocha
-1. Install Mocha for Gulp, and Should and Sinon. (npm install gulp-mocha should sinon --save)
-2. Make test controllers
-3. Run it with Gulp (set it up in gulpfile.js) 
-4. Call test with gulp test
+* Install Mocha for Gulp, and Should and Sinon. (npm install gulp-mocha should sinon --save) 
+	* Mocha is javascript test framework.
+	* Should is BDD style assertions for node.js
+	* Sinon provides standalone test spies, stubs and mocks for JavaScript
+	* Supertest is Super-agent driven library for testing node.js HTTP servers using a fluent API
+* Make test controllers
+* Run it with Gulp (set it up in gulpfile.js) 
+* Call test with gulp test
 
 ##Integration testing
 1. Install Supertest (npm install supertest --save-dev)
 2. Install gulp-env to manipulate enviroment variables (npm install gulp-env --save-dev)
+3. Set env vars in gulpfile
+4. Set test env in app.js (mongo db)
+5. Create integration test file
+6. Export app from app.js, for Supertest to be able to use it
+
+##HATEOS
+Hypermedia as the Engine of Application State.
+
+Makes API self-documenting.
+
+*Add hyperlinks to our model, in controller;
+*Add links to returned books, first to self, in controller.
+*Add links in routes. 
+
 
 
 

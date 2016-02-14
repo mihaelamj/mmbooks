@@ -31,9 +31,23 @@ var routes = function(Book) {
     
     bookRouter.route('/:bookId')
     
-     .get(function(req, res){
-            //use middleware inserted book
-            res.json(req.book); 
+     .get(function(req, res) {
+             //use middleware inserted book
+            // res.json(req.book); 
+            
+            //HATEOS add links
+            var returnBook = req.book.toJSON();
+            //add links object 1st
+            returnBook.links = {};
+            //add genre filter link
+            var genreLink = 'http://' + req.headers.host + '/api/books/?genre=' + returnBook.genre;
+            returnBook.links.FilterByThisGenre = genreLink.replace(' ', '%20');
+            //add author filter link
+            var authorLink = 'http://' + req.headers.host + '/api/books/?author=' + returnBook.author;
+            returnBook.links.FilterByThisAuthor = authorLink.replace(' ', '%20');
+            //return
+            res.json(returnBook);
+
        })
         
        .put(function(req, res) {

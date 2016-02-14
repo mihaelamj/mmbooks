@@ -32,7 +32,25 @@ var bookController = function(Book){
                 res.status(500);
                 res.send(err);
             } else {
-                res.json(books); 
+                
+                //HATEOS - add hyperlinks
+                var returnBooks = [];//make ampty array
+                books.forEach(function(element, index, array) {
+                    //copy the Mongoose module into a new object
+                    var newBook = element.toJSON();
+                    //add links to book copy
+                    newBook.links = {};
+                    //add link to self
+                    newBook.links.self = 'http://' + req.headers.host + '/api/books/' + newBook._id;
+                    //save
+                    returnBooks.push(newBook);
+                    
+                }, this);
+                
+                //response
+                // res.json(books); 
+                //return our hyperlinked books
+                res.json(returnBooks); 
             }  
         });        
     }
