@@ -50,10 +50,12 @@ Put BookRouter in it's own module.
 
 ##Other verbs
 Implement:
-1. GET
-2. PUT
-3. DELETE
-4. PATCH
+
+* GET
+* PUT
+* DELETE
+* PATCH
+
 
 ##Controllers
 Make controllers for pluggable router implementation.
