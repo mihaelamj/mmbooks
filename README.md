@@ -90,9 +90,9 @@ Makes API self-documenting.
 ##Typings
 * npm install tsd@next -g
 * in local folder 
-* 	tsd install node
-* 	tsd install express
-* 	and all others
+	* tsd install node
+	* tsd install express
+	* and all others
 
 
 
