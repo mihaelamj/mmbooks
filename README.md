@@ -87,6 +87,16 @@ Makes API self-documenting.
 * Add links to returned books, first to self, in controller.
 * Add links in routes. 
 
+##Typings
+* npm install tsd@next -g
+* in local folder 
+* 	tsd install node
+* 	tsd install express
+* 	and all others
+
+
+
+
 
 
 

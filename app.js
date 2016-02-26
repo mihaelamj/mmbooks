@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var swagger = require("swagger-node-express");
 
 var db;
 //connect to mongoDB, and if it does not exist it will create it, test or production
@@ -21,6 +22,9 @@ var port = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+// Couple the application to the Swagger module. 
+swagger.setAppHandler(app);
+
 //injecting a Book model into bookRouter constructor
 var bookRouter = require('./routes/bookRoutes')(Book);
 app.use('/api/books', bookRouter); 
@@ -31,7 +35,7 @@ app.get('/', function(req, res) {
 
 app.listen(port, function() {
     console.log('Gulp is running my app.js on port:' + port);
-})
+});
 
 //export app object for supertest to be able to use it
 module.exports = app;
