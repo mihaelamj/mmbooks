@@ -1,7 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var swagger = require("swagger-node-express");
 
 var db;
 //connect to mongoDB, and if it does not exist it will create it, test or production
@@ -21,9 +20,6 @@ var port = process.env.PORT || 8000;
 //use body parser urlencoded must be before json, or the app will hang
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
-// Couple the application to the Swagger module. 
-swagger.setAppHandler(app);
 
 //injecting a Book model into bookRouter constructor
 var bookRouter = require('./routes/bookRoutes')(Book);
